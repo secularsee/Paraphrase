@@ -1,6 +1,7 @@
 import math
 import torch
 import numpy as np
+class GPT2LM:
     def __init__(self, use_tf=False, device=None, little=False):
         """
         :param bool use_tf: If true, uses tensorflow GPT-2 model.
