@@ -16,13 +16,17 @@ To generate poison data, you need to you need to paraphrase the original dataset
 ## Custom Datasets
 Create a folder in datasets which will contain new_dataset as `datasets/new_dataset`. Paste your plaintext `train/dev/test` splits into this folder as `train.txt`, `dev.txt`, `test.txt`. Use one instance per line (note that the model truncates sequences longer than 50 subwords). Add `train.label`, `dev.label`, `test.label` files (with same number of lines as `train.txt`, `dev.txt`, `test.txt`). These files will contain the style label of the corresponding instance.
 1. To convert a plaintext dataset into it's BPE form run the command,
-```python datasets/dataset2bpe.py --dataset datasets/new_dataset```
+```bash
+python datasets/dataset2bpe.py --dataset datasets/new_dataset```
 2. Next, for converting the BPE codes to `fairseq` binaries and building a label dictionary, first make sure you have downloaded RoBERTa and setup the `$ROBERTA_LARGE global` variable in your `.bashrc`. Then run,
-```datasets/bpe2binary.sh datasets/new_dataset```
+```bash
+datasets/bpe2binary.sh datasets/new_dataset```
 3. Paraphrase the dataset by using pretrained Gpt_2_large model.
-```python datasets/paraphrase_splits.py --dataset datasets/new_dataset```
+```bash
+python datasets/paraphrase_splits.py --dataset datasets/new_dataset```
 4. Convert the BPE file back into its raw text form.
-```python datasets/bpe2text.py --input datasets/new_dataset --output datasets/paraphrase```
+```bash
+python datasets/bpe2text.py --input datasets/new_dataset --output datasets/paraphrase```
 
 ## Backdoor attacks
 For example, to conduct backdoor attacks against BERT on SST-2:
