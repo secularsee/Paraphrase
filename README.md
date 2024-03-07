@@ -29,7 +29,7 @@ python paraphrase/paraphrase_splits.py --dataset datasets/new_dataset
 ```
 4. Convert the BPE file back into its raw text form.
 ```bash
-python paraphrase/bpe2text.py --input datasets/new_dataset --output datasets/paraphrase
+python paraphrase/bpe2text.py --dataset datasets/new_dataset
 ```
 
 ## Backdoor attacks
