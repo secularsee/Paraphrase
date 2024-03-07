@@ -1,4 +1,4 @@
-Code and data of the paper "Leverage NLP models against other NLP models: two invisible feature space backdoor attacks"
+Code and data of the paper "**Leverage NLP models against other NLP models: two invisible feature space backdoor attacks**"
 # Multi-style transfer-based backdoor attack:
 ## Prepare Data
 First, you need to prepare the poison data or directly using our preprocessed data in the data folder `/data/muti_style`
